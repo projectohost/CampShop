@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Привал — Спорядження</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+      <div class="logo">🌲 Привал</div>
+      <div class="nav-buttons">
+        <a href="./index.html">Головна</a>
+        <a href="./catalog.html" class="active">Спорядження</a>
+        <a href="#cart">Кошик</a>
+      </div>
+    </nav>
+
+    <main>
+      <section id="menu" class="menu-section">
+        <h2>🎪 Намети та велике спорядження</h2>
+        <div class="products">
+            
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGm6g2wba1edFoTv6MEHc2P-28HxmRFaOlHBHRuiIBcw&s=10" alt="Намет Quechua Air Seconds 4.1" />
+                <h3>Намет Quechua Air Seconds 4.1</h3>
+                <p>19800 грн</p>
+                <button data-name="Намет Quechua Air Seconds 4.1" data-price="19800" class="add-to-cart-btn">Додати</button>
+            </div>
+
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1f1GEA_UHNCOSRzOutMaaDP851keE847baYWenuKg4w&s=10" alt="Намет Trizand Nevada" />
+                <h3>Намет Trizand Nevada 1 місний</h3>
+                <p>1890 грн</p>
+                <button data-name="Намет Trizand Nevada 4 місний" data-price="1890" class="add-to-cart-btn">Додати</button>
+            </div>
+
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVwwOmitrfmngxRjzTIgZGJCdhiE3jhxIwACFZUlAgLA&s=10" alt="Намет Terra Incognita" />
+                <h3>Намет Terra Incognita Olympia 4</h3>
+                <p>14276 грн</p>
+                <button data-name="Намет Terra Incognita Olympia 4" data-price="14276" class="add-to-cart-btn">Додати</button>
+            </div>
+
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi1rWc3SzjoexCOLsDJQbEFiVpJNK-JUG4YLcRy8eqYQ&s" alt="McKinley Horta" />
+                <h3>Кемпінговий намет McKinley Horta</h3>
+                <p>4949 грн</p>
+                <button data-name="Кемпінговий намет McKinley Horta" data-price="4949" class="add-to-cart-btn">Додати</button>
+            </div>
+
+        </div>
+      </section>
+
+      <section class="menu-section sweets-section">
+        <h2>🎒 Компактне екіпірування</h2>
+        <div class="products">
+            
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp0NMQpD7cM5kO9NEJudoNaPr93kkYctl3czNx7SO9NA&s=10" alt="Osprey Atmos" />
+                <h3>Рюкзак Osprey Atmos AG 50L</h3>
+                <p>16006 грн</p>
+                <button data-name="Рюкзак Osprey Atmos AG 50L" data-price="16006" class="add-to-cart-btn">Додати</button>
+            </div>
+
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNmLAn_lC6kW7upzDwuEKzzZqrlwxmO4LAe0iiPgAGg&s=10" alt="DryTide 50L" />
+                <h3>Рюкзак DryTide 50L Waterproof</h3>
+                <p>6511 грн</p>
+                <button data-name="Рюкзак DryTide 50L Waterproof" data-price="6511" class="add-to-cart-btn">Додати</button>
+            </div>
+
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_lwdQkHltQ5ksGExZJE8_54b4TreEn6GZtsTHi8s6Sg&s=10" alt="Trakker Big Snooze" />
+                <h3>Спальник Trakker Big Snooze+</h3>
+                <p>3590 грн</p>
+                <button data-name="Спальник Trakker Big Snooze+" data-price="3590" class="add-to-cart-btn">Додати</button>
+            </div>
+
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb8XxMr0n_6QTz0ZhH1CKzoRhKMQkzaWxtCK8QApY8Fw&s=10" alt="Snow Peak" />
+                <h3>Пальник Газовий Snow Peak GS-600</h3>
+                <p>5640 грн</p>
+                <button data-name="Пальник Газовий Snow Peak GS-600" data-price="5640" class="add-to-cart-btn">Додати</button>
+            </div>
+
+        </div>
+      </section>
+
+      <section class="cart-section" id="cart">
+        <div class="cart-header">
+          <h2>🛒 Твоє замовлення</h2>
+          <span id="cartCount">0 товарів</span>
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-bottom">
+          <h3>Разом до сплати: <span id="total">0</span> грн</h3>
+          <button class="order-btn" id="orderBtn">Оформити замовлення</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>🌲 Привал</p>
+      <p>📞 +380 44 123 45 67</p>
+      <p>📍 Україна</p>
+    </footer>
+
+    <script src="./catalog.js" defer></script>
+</body>
+</html>
