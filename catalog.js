@@ -116,3 +116,97 @@ document.addEventListener("DOMContentLoaded", () => {
     orderBtn.addEventListener("click", makeOrder);
   }
 });
+
+function makeOrder() {
+  if (cart.length === 0) {
+    alert("🛒 Кошик порожній!");
+    return;
+  }
+
+  alert("Дякую за покупку!");
+  cart = [];
+  updateCart();
+}
+
+
+function makeOrder() {
+  if (cart.length === 0) {
+    alert("🛒 Кошик порожній!");
+    return;
+  }
+
+  const modal = document.getElementById("orderModal");
+  if (modal) {
+    modal.classList.add("active");
+  }
+
+  cart = [];
+  updateCart();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupAddToCartListeners();
+  updateCart();
+  
+  const orderBtn = document.getElementById("orderBtn");
+  if (orderBtn) {
+    orderBtn.addEventListener("click", makeOrder);
+  }
+
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", () => {
+      const modal = document.getElementById("orderModal");
+      if (modal) {
+        modal.classList.remove("active");
+      }
+    });
+  }
+});
+function makeOrder() {
+  if (cart.length === 0) {
+    const emptyModal = document.getElementById("emptyCartModal");
+    if (emptyModal) {
+      emptyModal.classList.add("active");
+    }
+    return;
+  }
+
+  const modal = document.getElementById("orderModal");
+  if (modal) {
+    modal.classList.add("active");
+  }
+
+  cart = [];
+  updateCart();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupAddToCartListeners();
+  updateCart();
+  
+  const orderBtn = document.getElementById("orderBtn");
+  if (orderBtn) {
+    orderBtn.addEventListener("click", makeOrder);
+  }
+
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", () => {
+      const modal = document.getElementById("orderModal");
+      if (modal) {
+        modal.classList.remove("active");
+      }
+    });
+  }
+
+  const closeEmptyModalBtn = document.getElementById("closeEmptyModalBtn");
+  if (closeEmptyModalBtn) {
+    closeEmptyModalBtn.addEventListener("click", () => {
+      const emptyModal = document.getElementById("emptyCartModal");
+      if (emptyModal) {
+        emptyModal.classList.remove("active");
+      }
+    });
+  }
+});
