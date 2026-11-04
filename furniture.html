@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Привал — Меблі</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+      <div class="logo">🌲 Привал</div>
+      <div class="nav-buttons">
+        <a href="./index.html">Головна</a>
+        <a href="./tents.html">Намети</a>
+        <a href="./backpacks.html">Рюкзаки</a>
+        <a href="./furniture.html" class="active">Меблі</a>
+        <a href="./light.html">Електроніка</a>
+      </div>
+    </nav>
+
+    <div class="category-nav">
+        <a href="./tents.html" class="category-link">🎪 Намети</a>
+        <a href="./backpacks.html" class="category-link">🎒 Рюкзаки та спальники</a>
+        <a href="./furniture.html" class="category-link active">🪑 Меблі</a>
+        <a href="./light.html" class="category-link">🔦 Електроніка</a>
+        <a href="#cart" class="category-link cart-link">🛒 Кошик</a>
+    </div>
+
+    <main>
+      <section id="furniture-section" class="menu-section">
+        <h2>🪑 Складані туристичні меблі</h2>
+        <div class="products">
+
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdflUGpQfJxn2GHNIAqwxdQEAEHhY_jyyeY2CEJde9TQ&s=10" alt="Стілець кемпінговий" />
+                <h3>Розкладне крісло Ranger Сomfort</h3>
+                <p>1350 грн</p>
+                <button data-name="Розкладне крісло Ranger Сomfort" data-price="1350" class="add-to-cart-btn">Додати</button>
+            </div>
+
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH3IIzLHOtryhhZO8ZBywYZdwYR02qqs7QQ7ubnb0oaw&s=10" alt="Стіл туристичний" />
+                <h3>Алюмінієвий складаний стіл Skif Outdoor</h3>
+                <p>1790 грн</p>
+                <button data-name="Алюмінієвий складаний стіл Skif Outdoor" data-price="1790" class="add-to-cart-btn">Додати</button>
+            </div>
+
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDrI8OvHsIaos975y4f13uz5MN0PJd1yhWqktp4XcLDA&s=10" alt="Розкладачка кемпінгова" />
+                <h3>Туристичне ліжко-розкладачка Tramp</h3>
+                <p>3100 грн</p>
+                <button data-name="Туристичне ліжко-розкладачка Tramp" data-price="3100" class="add-to-cart-btn">Додати</button>
+            </div>
+
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDhKOViggbY2latgwT9XlXoSh3HjhUq-RtdrhSk61PQ&s" alt="Гамак" />
+                <h3>Надлегкий туристичний гамак Naturehike</h3>
+                <p>850 грн</p>
+                <button data-name="Надлегкий туристичний гамак Naturehike" data-price="850" class="add-to-cart-btn">Додати</button>
+            </div>
+
+        </div>
+      </section>
+
+      <section class="cart-section" id="cart">
+        <div class="cart-header">
+          <h2>🛒 Твоє замовлення</h2>
+          <span id="cartCount">0 товарів</span>
+        </div>
+        <div id="cartItems"></div>
+        <div class="cart-bottom">
+          <h3>Разом до сплати: <span id="total">0</span> грн</h3>
+          <button class="order-btn" id="orderBtn">Оформити замовлення</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>🌲 Привал</p>
+      <p>📞 +380 44 123 45 67</p>
+      <p>📍 Україна</p>
+    </footer>
+
+    <script src="./catalog.js" defer></script>
+
+    <div id="orderModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">🌲</div>
+            <h2>Дякую за покупку!</h2>
+            <p>Ваше спорядження для пригод уже готується до відправки.</p>
+            <button id="closeModalBtn" class="modal-btn">Чудово</button>
+        </div>
+    </div>
+
+    <div id="emptyCartModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">🎒</div>
+            <h2>Кошик порожній!</h2>
+            <p>Ви ще не додали жодного спорядження для вашого привалу.</p>
+            <button id="closeEmptyModalBtn" class="modal-btn">Зрозуміло</button>
+        </div>
+    </div>
+
+</body>
+</html>
