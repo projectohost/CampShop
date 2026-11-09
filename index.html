@@ -3,33 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Привал — Магазин Кемпінгу</title>
+    <title>Привал — Магазин туристичного спорядження</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        .features-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .feature-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px 20px;
+            width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 4px 20px rgba(204, 143, 66, 0.15);
+        }
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .feature-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+        }
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">🌲 Привал</div>
-        <div class="nav-buttons">
-            <a href="./index.html" class="active">Головна</a>
-            <a href="./catalog.html">Спорядження</a>
-            <a href="#footer-contacts">Контакти</a>
-        </div>
+      <div class="logo">🌲 Привал</div>
+      <div class="nav-buttons">
+        <a href="./index.html" class="active">Головна</a>
+        <a href="./tents.html">Намети</a>
+        <a href="./backpacks.html">Рюкзаки</a>
+        <a href="./furniture.html">Меблі</a>
+        <a href="./light.html">Електроніка</a>
+      </div>
     </nav>
 
     <main>
         <section class="hero-section">
-            <span class="hero-subtitle">Преміальне екіпірування для дикої природи</span>
+            <span class="hero-subtitle">Екіпірування для дикої природи</span>
             <h2>Твій надійний супутник у кожній експедиції</h2>
-            <p>Професійні намети, надлегкі спальники та системи приготування їжі для незабутнього кемпінгу під зірками.</p>
-            <a href="./catalog.html" class="btn">До каталогу товарів</a>
+            <p>Знайди професійні намети, надійні рюкзаки, спальники та електроніку для комфортного та безпечного відпочинку під зірками.</p>
+            <a href="./tents.html" class="btn">Відкрити каталог</a>
         </section>
+
+        <h2 style="text-align: center; margin-top: 60px; font-size: 28px;">Категорії спорядження</h2>
+
+        <div class="features-grid">
+            <a href="./tents.html" class="feature-card">
+                <span class="feature-icon">🎪</span>
+                <h3>Намети</h3>
+                <p>Експедиційні, сімейні та ультралегкі трекінгові моделі.</p>
+            </a>
+
+            <a href="./backpacks.html" class="feature-card">
+                <span class="feature-icon">🎒</span>
+                <h3>Рюкзаки та спальники</h3>
+                <p>Анатомічні рюкзаки, теплі спальні мішки та пальники.</p>
+            </a>
+
+            <a href="./furniture.html" class="feature-card">
+                <span class="feature-icon">🪑</span>
+                <h3>Меблі</h3>
+                <p>Розкладні крісла, алюмінієві столи та гамаки для затишку.</p>
+            </a>
+
+            <a href="./light.html" class="feature-card">
+                <span class="feature-icon">🔦</span>
+                <h3>Електроніка</h3>
+                <p>Налобні ліхтарі, сонячні панелі та захищені повербанки.</p>
+            </a>
+        </div>
     </main>
 
-    <footer id="footer-contacts">
-        <p>🌲 Привал</p>
-        <p>📞 +380 44 123 45 67</p>
-        <p>📍 Україна, Карпатський Експрес</p>
+    <footer>
+      <p>🌲 Привал</p>
+      <p>📞 +380 44 123 45 67</p>
+      <p>📍 Україна</p>
     </footer>
 
 </body>

@@ -1,12 +1,31 @@
 let cart = [];
 
+function loadCart() {
+  const savedCart = localStorage.getItem("prival_cart");
+  if (savedCart) {
+    try {
+      cart = JSON.parse(savedCart);
+    } catch (e) {
+      cart = [];
+    }
+  }
+}
+
+function saveCart() {
+  localStorage.setItem("prival_cart", JSON.stringify(cart));
+}
+
 function setupAddToCartListeners() {
-  document.querySelectorAll(".add-to-cart-btn").forEach(button => {
-    button.addEventListener("click", () => {
-      const name = button.getAttribute("data-name");
-      const price = Number(button.getAttribute("data-price"));
-      addToCart(name, price);
-    });
+  const productsContainer = document.querySelector(".products");
+  if (!productsContainer) return;
+
+  productsContainer.addEventListener("click", (event) => {
+    const button = event.target.closest(".add-to-cart-btn");
+    if (!button) return;
+
+    const name = button.getAttribute("data-name");
+    const price = Number(button.getAttribute("data-price"));
+    addToCart(name, price);
   });
 }
 
@@ -19,6 +38,7 @@ function addToCart(name, price) {
     cart.push({ name: name, price: price, quantity: 1 });
   }
 
+  saveCart();
   updateCart();
 }
 
@@ -27,11 +47,13 @@ window.changeQuantity = function(index, change) {
   if (cart[index].quantity <= 0) {
     cart.splice(index, 1);
   }
+  saveCart();
   updateCart();
 };
 
 window.removeItem = function(index) {
   cart.splice(index, 1);
+  saveCart();
   updateCart();
 };
 
@@ -92,79 +114,6 @@ function updateCart() {
 
 function makeOrder() {
   if (cart.length === 0) {
-    alert("🛒 Кошик порожній!");
-    return;
-  }
-
-  const name = prompt("Введіть ваше ім'я для підтвердження замовлення:");
-  if (!name) return;
-
-  let total = 0;
-  cart.forEach((item) => { total += item.price * item.quantity; });
-
-  alert(`🌲 Дякуємо, ${name}!\n\nВаше замовлення на спорядження прийнято!\nСума для зв'язку: ${total} грн`);
-  cart = [];
-  updateCart();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  setupAddToCartListeners();
-  updateCart();
-  
-  const orderBtn = document.getElementById("orderBtn");
-  if (orderBtn) {
-    orderBtn.addEventListener("click", makeOrder);
-  }
-});
-
-function makeOrder() {
-  if (cart.length === 0) {
-    alert("🛒 Кошик порожній!");
-    return;
-  }
-
-  alert("Дякую за покупку!");
-  cart = [];
-  updateCart();
-}
-
-
-function makeOrder() {
-  if (cart.length === 0) {
-    alert("🛒 Кошик порожній!");
-    return;
-  }
-
-  const modal = document.getElementById("orderModal");
-  if (modal) {
-    modal.classList.add("active");
-  }
-
-  cart = [];
-  updateCart();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  setupAddToCartListeners();
-  updateCart();
-  
-  const orderBtn = document.getElementById("orderBtn");
-  if (orderBtn) {
-    orderBtn.addEventListener("click", makeOrder);
-  }
-
-  const closeModalBtn = document.getElementById("closeModalBtn");
-  if (closeModalBtn) {
-    closeModalBtn.addEventListener("click", () => {
-      const modal = document.getElementById("orderModal");
-      if (modal) {
-        modal.classList.remove("active");
-      }
-    });
-  }
-});
-function makeOrder() {
-  if (cart.length === 0) {
     const emptyModal = document.getElementById("emptyCartModal");
     if (emptyModal) {
       emptyModal.classList.add("active");
@@ -178,10 +127,12 @@ function makeOrder() {
   }
 
   cart = [];
+  saveCart();
   updateCart();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  loadCart();
   setupAddToCartListeners();
   updateCart();
   
